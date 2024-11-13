@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import "source-map-support/register";
 import * as cdk from "aws-cdk-lib";
-import { PocStack } from "../lib/poc-stack";
+import { PoCStack } from "../lib/poc-stack";
 import { CDKContext } from "./config/types";
 
 import * as gitBranch from "git-branch";
@@ -52,7 +52,7 @@ const createStacks = async () => {
       tags,
     };
 
-    new PocStack(app, stackName, stackProps, context);
+    new PoCStack(app, stackName, stackProps, context);
   } catch (error) {
     console.error(error);
   }

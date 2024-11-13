@@ -15,7 +15,7 @@ import {
 } from "aws-cdk-lib/aws-stepfunctions";
 import { getLambdaAndTask } from "../src/util/LambdaAndTask";
 
-export class PocStack extends cdk.Stack {
+export class PoCStack extends cdk.Stack {
   constructor(
     scope: Construct,
     id: string,
