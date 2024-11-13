@@ -81,7 +81,7 @@ export class PoCStack extends cdk.Stack {
     /** Pink Floyd: Welcome to the (State) Machine **/
 
     // Define the state machine
-    const stateMachine = new StateMachine(this, "StateMachine", {
+    const stateMachine = new StateMachine(this, "PoCStateMachine", {
       definitionBody: DefinitionBody.fromChainable(
         receiveOrdersTask
           .next(addTimestampState)
@@ -91,9 +91,9 @@ export class PoCStack extends cdk.Stack {
     });
 
     // Stack outputs
-    new cdk.CfnOutput(this, "State-Machine", {
+    new cdk.CfnOutput(this, "PoC-State-Machine", {
       value: stateMachine.stateMachineArn,
-      exportName: `${context?.appName}-state-machine-${context?.environment}`,
+      exportName: `${context?.appName}-poc-state-machine-${context?.environment}`,
     });
   }
 }
