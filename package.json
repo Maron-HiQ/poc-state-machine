@@ -1,8 +1,8 @@
 {
-  "name": "poc",
+  "name": "poc-state-machine",
   "version": "0.1.0",
   "bin": {
-    "poc": "bin/poc.js"
+    "poc-state-machine": "bin/poc-state-machine.js"
   },
   "scripts": {
     "build": "tsc",

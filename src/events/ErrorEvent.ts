@@ -1,11 +1,9 @@
 export const UNKNOWN_ERROR_MESSAGE = "Unknown Error";
 
-export type ErrorEvent = {
-  error: string;
-};
+export class ErrorEvent extends Error {}
 
 export const isOrderEvent = (event: any): event is ErrorEvent => {
-  return typeof event?.error === "string";
+  return typeof event?.message === "string";
 };
 
 export const createErrorEvent = (
@@ -16,7 +14,5 @@ export const createErrorEvent = (
     console.error(message ?? UNKNOWN_ERROR_MESSAGE);
   }
 
-  return <ErrorEvent>{
-    error: message ?? UNKNOWN_ERROR_MESSAGE,
-  };
+  return new ErrorEvent(message);
 };
